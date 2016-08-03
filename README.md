@@ -66,6 +66,7 @@
 
   'cd /var/www/html'
   'ln -s /usr/local/share/yate/nib_web nib'
+  'ln -s /usr/local/share/yate/nib_web halo'
   'chmod -R a+w /usr/local/etc/yate'
 
 
@@ -101,6 +102,7 @@
 #### Open a browser and go to:
 
   http://ip-of-your-rpi/nib
+  http://ip-of-your-rpi/halo
 
 #### Enable GSM-Tapping
 
