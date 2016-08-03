@@ -5,74 +5,74 @@
 
 ### All commands are issued from the terminal unless otherwise noted.
 
-  sudo su
-  apt-get update
+  'sudo su'
+  'apt-get update'
 
-  apt-get install git telnet apache2 php5 libusb-1.0-0 libusb-1.0-0-dbg libusb-1.0-0-dev libgsm1 libgsm1-dev bladerf libbladerf-dev libbladerf0 cmake automake
+  'apt-get install git telnet apache2 php5 libusb-1.0-0 libusb-1.0-0-dbg libusb-1.0-0-dev libgsm1 libgsm1-dev bladerf libbladerf-dev libbladerf0 cmake automake'
 
-  cd /
-  mkdir halo
+  'cd /''
+  'mkdir halo'
 
 
 ### BladeRF Source
 
-  cd /halo
-  wget -c https://github.com/Nuand/bladeRF/archive/master.zip
-  unzip master.zip
-  cd bladeRF-master/host
-  mkdir build
-  cd build
-  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DINSTALL_UDEV_RULES=ON ../
-  make -j4
-  make install > install.log
-  ldconfig
+  'cd /halo'
+  'wget -c https://github.com/Nuand/bladeRF/archive/master.zip'
+  'unzip master.zip'
+  'cd bladeRF-master/host'
+  'mkdir build'
+  'cd build'
+  'cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DINSTALL_UDEV_RULES=ON ../'
+  'make -j4'
+  'make install > install.log'
+  'ldconfig'
 
 
 ### BladeRF x40 firmware
 
-  cd /halo
-  wget -c http://www.nuand.com/fx3/bladeRF_fw_v2.0.0.img
-  bladeRF-cli -f bladeRF_fw_v2.0.0.img -v verbose
-  quit
+  'cd /halo'
+  'wget -c http://www.nuand.com/fx3/bladeRF_fw_v2.0.0.img'
+  'bladeRF-cli -f bladeRF_fw_v2.0.0.img -v verbose'
+  'quit'
 
 ### Clone Repo
 
-  cd /halo
-  git clone https://github.com/stacywebb/ValcomHalo.git
-  cd ValcomHalo
+  'cd /halo'
+  'git clone https://github.com/stacywebb/ValcomHalo.git'
+  'cd ValcomHalo'
 
 
 ### Yate
 
-  cd yate
-  ./autogen.sh
-  ./configure --prefix=/usr/local
-  make -j4
-  make install
-  ldconfig
-  cd ..
+  'cd yate'
+  ''./autogen.sh'
+  ''./configure --prefix=/usr/local'
+  'make -j4'
+  'make install'
+  'ldconfig'
+  'cd ..'
 
 ### YateBTS
 
-  cd yatebts
-  ./autogen.sh
-  ./configure --prefix=/usr/local
-  make -j4
-  make install
-  ldconfig
+  'cd yatebts'
+  './autogen.sh'
+  './configure --prefix=/usr/local'
+  'make -j4'
+  'make install'
+  'ldconfig'
 
 
 ### Network in a Box (NIB) GUI
 
-  cd /var/www/html
-  ln -s /usr/local/share/yate/nib_web nib
-  chmod -R a+w /usr/local/etc/yate
+  'cd /var/www/html'
+  'ln -s /usr/local/share/yate/nib_web nib'
+  'chmod -R a+w /usr/local/etc/yate'
 
 
 ### Configuration
 
 
-  nano /usr/local/etc/yate/ybts.conf
+  'nano /usr/local/etc/yate/ybts.conf'
 
 #### Use the following values:
 
@@ -84,7 +84,7 @@
     Radio.PowerManager.MaxAttenDB=35
     Radio.PowerManager.MinAttenDB=35
 
-    nano /usr/local/etc/yate/subscribers.conf
+    'nano /usr/local/etc/yate/subscribers.conf'
 
 #### Use the following values:
 
@@ -111,7 +111,7 @@
 
 ### Configuring the GPRS BTS Operability
 
-  iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+  'iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE'
 
 #### Add the following values using the UI:
 
@@ -122,7 +122,7 @@
 ￼
 ### Start ValcomHalo
 
-  yate -s
+  'yate -s'
 
 #### expected response:
 
@@ -134,7 +134,7 @@
 
 #### Configure the welcome message
 
-    nano /usr/local/share/yate/scripts/nib.js
+    'nano /usr/local/share/yate/scripts/nib.js'
 
 
 #### View Subscribers using the ValcomHalo UI
