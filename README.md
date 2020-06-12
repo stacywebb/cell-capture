@@ -1,4 +1,4 @@
-# ValcomHalo
+# Cell Capture
 ***
 
 **All commands are issued from the terminal unless otherwise noted.**
@@ -38,7 +38,7 @@
 ### Clone Repo
 
     cd /halo
-    git clone https://github.com/stacywebb/ValcomHalo.git
+    git clone https://github.com/stacywebb/cell-capture.git
     username: valcom
     password: Kr3Ml!n
     cd ValcomHalo
